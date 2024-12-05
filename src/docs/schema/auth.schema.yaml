@@ -1,0 +1,36 @@
+# This schema uses YAML syntax to define the structure of the requests.
+
+components:
+    schemas:
+        signup:
+            # type: object: Indicates that the request body must be a JSON object.
+            type: object
+            # required: Specifies that name, email, and password must be present for a valid signup request.
+            required:
+                - name
+                - email
+                - password
+            # properties: Describes the fields within the object:
+            properties:
+                name:
+                    type: string
+                    example: Full Name
+                email:
+                    type: string
+                    example: email@example.com
+                password:
+                    type: string
+                    example: password
+
+        signin:
+            type: object
+            required:
+                - email
+                - password
+            properties:
+                email:
+                    type: string
+                    example: email@example.com
+                password:
+                    type: string
+                    example: password

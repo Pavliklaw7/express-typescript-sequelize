@@ -1,0 +1,1 @@
+This folder contains the base configuration for all services in src, such as sequelize configuration and .env configuration.

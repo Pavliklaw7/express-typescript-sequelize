@@ -1,0 +1,60 @@
+# This file defines the signup API endpoint for your Swagger documentation.
+# It describes how the /auth/signup route's HTTP post request should be handled,
+# what data it expects, and what responses it can return.
+
+# [POST] signup
+
+# /auth/signup: This specifies the API path for user registration.
+/auth/signup:
+    # post: Specifies the HTTP method. To create a new user, the POST method is used.
+    post:
+        # tags: This is used to group related endpoints in the Swagger UI. The Auth tag will group together all authentication-related routes.
+        tags:
+            - Auth
+        # summary: A brief description of what this endpoint does. In this case, it reads "Sign Up."
+        summary: Sign Up
+        # requestBody: Describes the data required in the request.
+        requestBody:
+            # description: Explains the purpose of the request. Here, it’s “Sign Up”.
+            description: Sign Up
+            required: true
+            # content: The body of the message has to be in JSON format (application/json).
+            content:
+                application/json:
+                    schema:
+                        # $ref: ‘#/components/schemas/signup’: This implements the signup schema defined in auth.schema.yaml.
+                        $ref: '#/components/schemas/signup'
+        responses:
+            201:
+                description: 'OK'
+            400:
+                description: 'Bad Request'
+            409:
+                description: 'Conflict'
+            500:
+                description: 'Internal server error'
+
+# [POST] signin
+/auth/signin:
+    post:
+        tags:
+            - Auth
+        summary: Sign In
+        requestBody:
+            description: Sign In
+            required: true
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/signin'
+        responses:
+            201:
+                description: 'OK'
+            400:
+                description: 'Bad Request'
+            401:
+                description: 'Unauthorized'
+            409:
+                description: 'Conflict'
+            500:
+                description: 'Internal server error'

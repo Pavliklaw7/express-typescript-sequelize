@@ -1,0 +1,19 @@
+Most tasks about backend services will be stored in this folder, such as repository files named repo to store database queries, 
+service files to store business logic, controller files to control requests and responses between client and server, 
+a routes file to configure the endpoints for a module, and the last one is a validator file for validating the request body. 
+The structure in modules folder should be like this:
+
+│   ├── /modules         
+│   │   ├── /auth
+│   │   │   ├── /auth.repo.ts
+│   │   │   ├── /auth.service.ts
+│   │   │   ├── /auth.controller.ts    
+│   │   │   ├── /auth.routes.ts
+│   │   │   ├── /auth.validator.ts  
+│   │   ├── /user
+│   │   │   ├── /user.repo.ts
+│   │   │   ├── /user.service.ts
+│   │   │   ├── /user.controller.ts    
+│   │   │   ├── /user.routes.ts
+│   │   │   ├── /user.validator.ts
+│   │   └── /etc         
